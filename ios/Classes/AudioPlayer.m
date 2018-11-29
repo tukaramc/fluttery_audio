@@ -2,6 +2,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import "AudioPlayer.h"
 
+/// ///////  C:\flutter\.pub-cache\hosted\pub.dartlang.org\fluttery_audio-0.0.3\ios\classes
+
 const NSString* TAG = @"AudioPlayer";
 
 @implementation AudioPlayer {
@@ -225,7 +227,7 @@ const NSString* TAG = @"AudioPlayer";
     [listener onSeekStarted];
   }
   
-  [_audioPlayer seekToTime:seekTime completionHandler:^(bool finished) {
+  [_audioPlayer seekToTime:seekTime completionHandler:^(BOOL finished) {
     for (id<AudioPlayerListener> listener in [self->_listeners allObjects]) {
       [listener onSeekCompleted:[self playbackPosition]];
     }
